@@ -1,0 +1,26 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "description": "技術ブログ記事管理リポジトリ（Zenn/Qiita同時公開）",
+  "private": true,
+  "scripts": {
+    "zenn:preview": "zenn preview",
+    "zenn:new": "zenn new:article",
+    "qiita:preview": "qiita preview",
+    "qiita:new": "qiita new",
+    "qiita:publish": "qiita publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aieo-product/blog.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@qiita/qiita-cli": "^1.8.0",
+    "marked": "^17.0.4",
+    "puppeteer": "^24.38.0",
+    "zenn-cli": "^0.4.6"
+  }
+}
