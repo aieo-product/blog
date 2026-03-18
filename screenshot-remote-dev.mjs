@@ -837,6 +837,150 @@ function buildTaildrop() {
 </body></html>`;
 }
 
+// 9. Actual development workflow (CC Pocket + Screens + cmux)
+function buildActualWorkflow() {
+  return `<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"><style>
+  ${commonStyles}
+  .workflow-steps { display: flex; flex-direction: column; gap: 0; }
+  .ws {
+    display: flex; gap: 16px; align-items: stretch;
+  }
+  .ws-timeline {
+    width: 56px; display: flex; flex-direction: column; align-items: center;
+    flex-shrink: 0;
+  }
+  .ws-num {
+    width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px; font-weight: 700; color: white;
+  }
+  .ws-line { width: 3px; flex: 1; min-height: 12px; }
+  .ws-num-1 { background: #1f6feb; }
+  .ws-num-2 { background: #8b5cf6; }
+  .ws-num-3 { background: #d29922; }
+  .ws-num-4 { background: #238636; }
+  .ws-line-1 { background: linear-gradient(#1f6feb, #8b5cf6); }
+  .ws-line-2 { background: linear-gradient(#8b5cf6, #d29922); }
+  .ws-line-3 { background: linear-gradient(#d29922, #238636); }
+  .ws-content {
+    flex: 1; background: #0d1117; border-radius: 12px;
+    padding: 20px 24px; margin-bottom: 14px;
+    border: 1px solid #30363d;
+  }
+  .ws-content h4 { font-size: 15px; margin-bottom: 6px; color: #e6edf3; }
+  .ws-content p { font-size: 13px; color: #7d8590; line-height: 1.7; }
+  .ws-devices {
+    display: flex; gap: 10px; margin-top: 10px; flex-wrap: wrap;
+  }
+  .ws-device {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 4px 12px; border-radius: 8px;
+    font-size: 12px; font-weight: 600;
+  }
+  .ws-device-setup { background: #1e3a5f; color: #58a6ff; }
+  .ws-device-phone { background: #2d1f4e; color: #d2a8ff; }
+  .ws-device-iphone { background: #2d2b1b; color: #d29922; }
+  .ws-device-pc { background: #1b2d1b; color: #3fb950; }
+  .ws-highlight {
+    background: #161b22; border-radius: 8px; padding: 12px 16px;
+    margin-top: 12px; font-size: 13px; color: #e6edf3;
+    border-left: 3px solid;
+  }
+  .ws-highlight-purple { border-color: #8b5cf6; }
+  .ws-highlight-yellow { border-color: #d29922; }
+  .ws-highlight-green { border-color: #238636; }
+  .cycle-box {
+    margin-top: 24px; background: #0d1117; border-radius: 12px;
+    padding: 20px 24px; border: 1px solid #30363d; text-align: center;
+  }
+  .cycle-title { font-size: 14px; color: #58a6ff; font-weight: 700; margin-bottom: 16px; }
+  .cycle-flow {
+    display: flex; align-items: center; justify-content: center;
+    gap: 8px; flex-wrap: wrap;
+  }
+  .cycle-item {
+    padding: 10px 18px; border-radius: 10px;
+    font-size: 13px; font-weight: 600;
+  }
+  .cycle-arrow { color: #58a6ff; font-size: 20px; }
+  .cycle-1 { background: #2d1f4e; color: #d2a8ff; }
+  .cycle-2 { background: #2d2b1b; color: #d29922; }
+  .cycle-3 { background: #1b2d1b; color: #3fb950; }
+</style></head><body>
+  <div class="card">
+    <div class="card-title">🔄 実際の開発ワークフロー</div>
+    <div class="workflow-steps">
+      <div class="ws">
+        <div class="ws-timeline"><div class="ws-num ws-num-1">1</div><div class="ws-line ws-line-1"></div></div>
+        <div class="ws-content">
+          <h4>🖥️ 母艦PCのセットアップ（本記事の内容）</h4>
+          <p>Tailscale + SSH + cmux の環境を母艦PCに構築。これが全ての基盤になります。</p>
+          <div class="ws-devices">
+            <span class="ws-device ws-device-setup">Tailscale</span>
+            <span class="ws-device ws-device-setup">SSH</span>
+            <span class="ws-device ws-device-setup">cmux</span>
+          </div>
+        </div>
+      </div>
+      <div class="ws">
+        <div class="ws-timeline"><div class="ws-num ws-num-2">2</div><div class="ws-line ws-line-2"></div></div>
+        <div class="ws-content">
+          <h4>📱 CC Pocket で常時 Claude Code を実行</h4>
+          <p>CC Pocket（iPhone アプリ）から母艦PCの Claude Code に接続。移動中やスキマ時間にタスクを投げて、AIが常時コードを書き続ける環境を実現。</p>
+          <div class="ws-devices">
+            <span class="ws-device ws-device-phone">📱 CC Pocket</span>
+            <span class="ws-device ws-device-phone">🤖 Claude Code</span>
+          </div>
+          <div class="ws-highlight ws-highlight-purple">
+            💡 承認リクエストもプッシュ通知で届くので、電車の中でもサッと対応できる
+          </div>
+        </div>
+      </div>
+      <div class="ws">
+        <div class="ws-timeline"><div class="ws-num ws-num-3">3</div><div class="ws-line ws-line-3"></div></div>
+        <div class="ws-content">
+          <h4>📲 Screens アプリで iPhone から動作確認</h4>
+          <p>Claude Code がコードを書き上げたら、iPhone の Screens アプリ（VNCクライアント）で母艦PCの画面にアクセス。ブラウザの動作確認やUIの目視チェックをその場で実施。</p>
+          <div class="ws-devices">
+            <span class="ws-device ws-device-iphone">📲 Screens（VNC）</span>
+            <span class="ws-device ws-device-iphone">🌐 ブラウザ確認</span>
+          </div>
+          <div class="ws-highlight ws-highlight-yellow">
+            💡 Tailscale 経由なので外出先からでも LAN 相当の速度で画面操作可能
+          </div>
+        </div>
+      </div>
+      <div class="ws">
+        <div class="ws-timeline"><div class="ws-num ws-num-4"></div></div>
+        <div class="ws-content">
+          <h4>💻 PC が使える時は cmux + SSH でバイブコーディング</h4>
+          <p>PCを触れる環境では、cmux 経由で SSH 接続してバイブコーディング。Claude Code と対話しながらコードの方向性を指示。セッション永続化で前回の作業状態がそのまま残っています。</p>
+          <div class="ws-devices">
+            <span class="ws-device ws-device-pc">💻 SSH + cmux</span>
+            <span class="ws-device ws-device-pc">🎵 バイブコーディング</span>
+          </div>
+          <div class="ws-highlight ws-highlight-green">
+            💡 CC Pocket で投げたタスクの結果を確認しながら、次の指示を出す流れが最高に効率的
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cycle-box">
+      <div class="cycle-title">🔁 このサイクルが回り続ける</div>
+      <div class="cycle-flow">
+        <span class="cycle-item cycle-1">📱 CC Pocket でタスク投入</span>
+        <span class="cycle-arrow">→</span>
+        <span class="cycle-item cycle-2">📲 Screens で動作確認</span>
+        <span class="cycle-arrow">→</span>
+        <span class="cycle-item cycle-3">💻 cmux でバイブコーディング</span>
+        <span class="cycle-arrow">→</span>
+        <span class="cycle-item cycle-1">📱 ...</span>
+      </div>
+    </div>
+  </div>
+</body></html>`;
+}
+
 async function captureScreenshot(browser, html, filename) {
   const page = await browser.newPage();
   await page.setViewport({ width: 1000, height: 800, deviceScaleFactor: 2 });
@@ -859,6 +1003,7 @@ async function main() {
   await captureScreenshot(browser, buildSSHSetup(), 'ssh-setup.png');
   await captureScreenshot(browser, buildCmuxLayout(), 'cmux-layout.png');
   await captureScreenshot(browser, buildTaildrop(), 'taildrop.png');
+  await captureScreenshot(browser, buildActualWorkflow(), 'actual-workflow.png');
   await captureScreenshot(browser, buildDailyWorkflow(), 'daily-workflow.png');
   await captureScreenshot(browser, buildTroubleshooting(), 'troubleshooting.png');
 

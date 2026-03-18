@@ -7,7 +7,7 @@ tags:
   - tailscale
   - ClaudeCode
 private: false
-updated_at: '2026-03-18T14:53:03+09:00'
+updated_at: '2026-03-18T15:05:06+09:00'
 id: b4ee31a6578becf04770
 organization_url_name: null
 slide: false
@@ -252,6 +252,49 @@ TeamViewerとの決定的な違いは、**Tailscale経由のVNCはLAN内接続�
 - システム設定の変更
 
 逆に言えば、これら以外の場面ではSSHで十分です。
+
+## 実際の開発ワークフロー
+
+ここまでで環境は整いました。では、この環境を使って実際にどう開発しているのか、私の日常ワークフローを紹介します。
+
+![実際の開発ワークフロー](https://raw.githubusercontent.com/aieo-product/blog/main/images/remote-dev/actual-workflow.png)
+*CC Pocket → Screens → cmux のサイクルが回り続けることで、場所を問わず開発が進みます*
+
+### Step 1: 母艦PCのセットアップ（本記事の内容）
+
+本記事で解説した Tailscale + SSH + cmux の環境を母艦PCに構築します。これが全ての基盤になります。
+
+### Step 2: CC Pocket で常時 Claude Code を実行
+
+[CC Pocket](https://apps.apple.com/jp/app/cc-pocket-%E3%81%A9%E3%81%93%E3%81%A7%E3%82%82%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0/id6759188790)はiPhoneから母艦PCのClaude Codeを操作できるアプリです。Bridge Serverを母艦PCにインストールし、QRコードで接続するだけでセットアップ完了。
+
+```bash
+# 母艦PCにBridge Serverをインストール
+npx @ccpocket/bridge@latest
+```
+
+移動中やスキマ時間にタスクを投げて、AIが常時コードを書き続ける環境が手に入ります。承認リクエストもプッシュ通知で届くので、電車の中でもサッと対応できます。
+
+### Step 3: Screens アプリで iPhone から動作確認
+
+Claude Codeがコードを書き上げたら、iPhoneの**Screens**アプリ（VNCクライアント）で母艦PCの画面にアクセスします。ブラウザの動作確認やUIの目視チェックなど、GUIが必要な確認作業をその場で実施できます。
+
+Tailscale経由なので外出先からでもLAN相当の速度で画面操作が可能です。
+
+### Step 4: PCが使える時は cmux + SSH でバイブコーディング
+
+PCを触れる環境では、cmux経由でSSH接続してバイブコーディング。Claude Codeと対話しながらコードの方向性を指示したり、レビューしたり。cmuxのセッション永続化のおかげで、CC Pocketで投げたタスクの結果を確認しながら次の指示を出せます。
+
+### このサイクルが回り続ける
+
+```
+📱 CC Pocket でタスク投入
+  → 📲 Screens で動作確認
+    → 💻 cmux でバイブコーディング
+      → 📱 CC Pocket でタスク投入 → ...
+```
+
+場所やデバイスを問わず、常に開発が進み続ける。これが Tailscale + SSH + cmux 環境の真価です。
 
 ## 日常の運用フローまとめ
 
