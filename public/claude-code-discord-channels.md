@@ -1,14 +1,14 @@
 ---
-title: 'Claude Code Channels x Discord セットアップガイド -- スマホからAIコーディングを操作する'
+title: Claude Code Channels x Discord セットアップガイド -- スマホからAIコーディングを操作する
 tags:
-  - name: ClaudeCode
-  - name: Discord
-  - name: MCP
-  - name: AI
-  - name: リモート開発
+  - AI
+  - MCP
+  - discord
+  - リモート開発
+  - ClaudeCode
 private: false
-updated_at: ''
-id: null
+updated_at: '2026-03-20T13:32:51+09:00'
+id: a8b04c2863eff1418098
 organization_url_name: null
 slide: false
 ignorePublish: false
