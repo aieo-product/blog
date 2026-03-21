@@ -1,14 +1,14 @@
 ---
 title: Claude Code の remote-control が動かない？3つのエラーパターンと完全復旧手順
 tags:
-  - ClaudeCode
-  - トラブルシューティング
-  - macOS
   - CLI
+  - macOS
+  - トラブルシューティング
   - Anthropic
+  - ClaudeCode
 private: false
-updated_at: ''
-id: null
+updated_at: '2026-03-21T17:46:50+09:00'
+id: bfb6fba1d31cb08c8b8d
 organization_url_name: null
 slide: false
 ignorePublish: false
