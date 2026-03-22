@@ -252,3 +252,7 @@ OpenAIが **Symphony** で示したように、**Issueを起点としたエー�
 - [OpenAI Symphony（GitHub）](https://github.com/openai/symphony)
 - [OpenAI Releases Symphony - MarkTechPost](https://www.marktechpost.com/2026/03/05/openai-releases-symphony-an-open-source-agentic-framework-for-orchestrating-autonomous-ai-agents-through-structured-scalable-implementation-runs/)
 - [OpenAI's Symphony may shift AI beyond chat - UBS](https://finance.yahoo.com/news/openai-symphony-may-shift-ai-164600732.html)
+
+:::message
+この記事は Claude Code（Claude Opus）と共同で執筆しました。
+:::

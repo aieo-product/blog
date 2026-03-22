@@ -302,3 +302,7 @@ Claude Code Channels x Discord は、**スマホから母艦 PC の Claude Code 
 - [Channels Reference](https://code.claude.com/docs/en/channels-reference)
 - [Discord Plugin ソースコード](https://github.com/anthropics/claude-plugins-official/tree/main/external_plugins/discord)
 - [Claude Code Settings](https://code.claude.com/docs/en/settings)
+
+---
+
+> この記事は Claude Code（Claude Opus）と共同で執筆しました。

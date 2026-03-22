@@ -1,9 +1,17 @@
 ---
-title: "Claude Code の remote-control が動かない？3つのエラーパターンと完全復旧手順"
-emoji: "🔧"
-type: "tech"
-topics: ["claudecode", "トラブルシューティング", "macOS", "CLI", "Anthropic"]
-published: true
+title: Claude Code の remote-control が動かない？3つのエラーパターンと完全復旧手順
+tags:
+  - CLI
+  - macOS
+  - トラブルシューティング
+  - Anthropic
+  - ClaudeCode
+private: false
+updated_at: '2026-03-21T17:46:50+09:00'
+id: bfb6fba1d31cb08c8b8d
+organization_url_name: null
+slide: false
+ignorePublish: false
 ---
 
 ## はじめに
@@ -93,9 +101,7 @@ esac
 
 `auth` も追加しておくと、`claude auth login/logout` もラッパーを経由せず直接実行されるようになります。
 
-:::message
-cmux がアップデートされるとこの変更が上書きされる可能性があります。アップデート後は再確認してください。
-:::
+> **注意:** cmux がアップデートされるとこの変更が上書きされる可能性があります。アップデート後は再確認してください。
 
 ### 代替策
 
@@ -151,9 +157,7 @@ export DISABLE_TELEMETRY=1
 
 変更後、**新しいターミナルを開く** ことが必要です。既存のターミナルには古い環境変数が残っています。
 
-:::message alert
-プライバシーを考慮してテレメトリを無効化したくなる気持ちはわかります。しかし現状の Claude Code では、テレメトリ無効化がフィーチャーフラグの評価まで巻き込んでしまう設計になっています。remote-control 等のゲート付き機能を使いたい場合は、テレメトリを有効にしておく必要があります。
-:::
+> **重要:** プライバシーを考慮してテレメトリを無効化したくなる気持ちはわかります。しかし現状の Claude Code では、テレメトリ無効化がフィーチャーフラグの評価まで巻き込んでしまう設計になっています。remote-control 等のゲート付き機能を使いたい場合は、テレメトリを有効にしておく必要があります。
 
 ---
 
@@ -268,7 +272,7 @@ IDE 内蔵ターミナルはシェルプロファイル（`.zshrc` 等）を読�
 
 実際に **Antigravity**（Google の IDE）の内蔵ターミナルで Claude Code を使っていたところ、remote-control が使えませんでした。`.zshrc` からテレメトリ無効化の環境変数を削除した後、Antigravity を再起動すると `/remote-control` が正常に表示されるようになりました。
 
-![Antigravity で /remote-control が使えるようになった様子](/images/remote-control-fix/antigravity_ss.png)
+![Antigravity で /remote-control が使えるようになった様子](https://raw.githubusercontent.com/aieo-product/blog/main/images/remote-control-fix/antigravity_ss.png)
 *`.zshrc` 修正後、Antigravity のターミナルで `/remote-control` が表示されている*
 
 ### 影響を受ける可能性がある IDE
@@ -284,31 +288,6 @@ IDE 内蔵ターミナルはシェルプロファイル（`.zshrc` 等）を読�
 
 いずれの場合も、**`.zshrc` から環境変数を削除して IDE を再起動する** ことで解決できます。
 
-## 「テレメトリ」と「Claudeアプリのプライバシー設定」は別物
-
-「テレメトリを無効化したのにまた有効にするの？プライバシーは大丈夫？」と思った方のために補足します。
-
-### Claude アプリのプライバシー設定
-
-Claude デスクトップアプリ（claude.ai）の設定にある**ロケーションメタデータ**や**改善データ**の設定は、Anthropic サーバー側での会話データの扱いを制御するものです。これらは今回の問題とは無関係で、引き続きオフのままで問題ありません。
-
-### Claude Code のテレメトリ（今回の問題）
-
-`.zshrc` に設定していた `DISABLE_TELEMETRY` や `CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC` は、**Claude Code CLI ツール自体の利用統計送信**を制御するものです。デスクトップアプリのプライバシー設定とは別系統です。
-
-| 設定 | 制御対象 | 場所 |
-|------|----------|------|
-| アプリのプライバシー設定 | 会話データの利用・位置情報 | Claude アプリの設定画面 |
-| `DISABLE_TELEMETRY` 等 | CLI の利用統計・フィーチャーフラグ | `.zshrc` や `settings.json` |
-
-### テレメトリを有効にしても大丈夫？
-
-そもそも Claude Code を使う時点で、**コードのコンテキストやプロンプトは API 通信として Anthropic に送信**されています。テレメトリの有無に関わらず、これは製品が動くために必須の通信です。
-
-テレメトリで追加で送られるのは、利用統計（どの機能を使ったか、エラー情報、パフォーマンスデータ等）であり、テレメトリを切ってもコードが送られなくなるわけではありません。
-
-つまり、**テレメトリを切るメリットはほぼなく、フィーチャーフラグが壊れるデメリットだけが残る**のが現状です。
-
 ## おわりに
 
 プライバシーのためにテレメトリを無効化していた方は多いと思います。私もその一人でした。しかし現状では、テレメトリ無効化がフィーチャーフラグと連動しているため、remote-control を始めとするゲート付き機能が全て使えなくなります。
@@ -316,7 +295,3 @@ Claude デスクトップアプリ（claude.ai）の設定にある**ロケー�
 この設計については Anthropic 側の改善を期待したいところです。テレメトリの無効化とフィーチャーフラグの評価は、本来独立して制御できるべきでしょう。
 
 同じ問題で困っている方の助けになれば幸いです。
-
-:::message
-この記事は Claude Code（Claude Opus）と共同で執筆しました。
-:::
