@@ -162,6 +162,20 @@ Claude Code セッション内で以下を実行します。
 ![プラグイン設定の実行](https://pbs.twimg.com/media/HD0lL_CboAIenyh.png)
 *Claude Code 内でのプラグインインストール・設定の実行画面*
 
+> **⚠️ `/discord:configure` が「Unknown skill」になる場合**
+>
+> 以下のように `Unknown skill: discord:configure` と表示され、トークンが引数として表示されてしまう場合があります。
+>
+> ![discord:configure が Unknown skill になるエラー](https://raw.githubusercontent.com/aieo-product/blog/main/images/remote-control-fix/claude_error_masked.png)
+> *`/discord:configure` が認識されず、Bot トークンが「Args from unknown skill」として表示されてしまう例*
+>
+> この問題は、`.zshrc` や `settings.json` で **テレメトリを無効化** していることが原因です。テレメトリ無効化がフィーチャーフラグの評価を破壊し、プラグインのスラッシュコマンドが正しく登録されなくなります。
+>
+> **解決方法は別記事にまとめています：**
+> 👉 [Claude Code の remote-control が動かない？3つのエラーパターンと完全復旧手順](https://qiita.com/items/bfb6fba1d31cb08c8b8d)
+>
+> この問題は **VS Code、Cursor、Antigravity** など、ターミナルを内蔵するすべての IDE でも同様に発生します。IDE 内蔵ターミナルはシェルプロファイル（`.zshrc` 等）の環境変数を継承するためです。
+
 ### Step 5: Channels 付きで起動
 
 セッションを終了し、`--channels` フラグ付きで起動します。
@@ -275,6 +289,12 @@ Claude Code Channels x Discord は、**スマホから母艦 PC の Claude Code 
 セットアップ自体はシンプルなので、Claude Code を日常的に使っている方はぜひ試してみてください。Discord からサッと指示を出して、母艦 PC で Claude Code が黙々とコードを書いてくれる体験は、一度味わうと戻れなくなるはずです。
 
 > この記事はリサーチプレビュー段階の機能を扱っているため、正式リリース時に手順が変わる可能性があります。更新があり次第、記事を追記していきます。
+
+## 解説動画
+
+セットアップの一連の流れを解説動画にまとめました。記事と合わせてご覧ください。
+
+👉 [セットアップ解説動画（ずんだもんナレーション付き）](https://github.com/aieo-product/blog/raw/main/images/remote-control-fix/discord_demo.mp4)
 
 ## 参考リンク
 
