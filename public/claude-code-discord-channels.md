@@ -294,7 +294,7 @@ Claude Code Channels x Discord は、**スマホから母艦 PC の Claude Code 
 
 セットアップの一連の流れを解説動画にまとめました。記事と合わせてご覧ください。
 
-👉 [セットアップ解説動画（ずんだもんナレーション付き）](https://github.com/aieo-product/blog/raw/main/images/remote-control-fix/discord_demo.mp4)
+👉 [セットアップ解説動画（ずんだもんナレーション付き）](https://x.com/otani_ai_memo/status/2035557887905566778)
 
 ## 参考リンク
 
