@@ -7,7 +7,7 @@ tags:
   - リモート開発
   - ClaudeCode
 private: false
-updated_at: '2026-03-22T11:44:09+09:00'
+updated_at: '2026-03-22T12:18:30+09:00'
 id: a8b04c2863eff1418098
 organization_url_name: null
 slide: false
@@ -166,7 +166,7 @@ Claude Code セッション内で以下を実行します。
 >
 > 以下のように `Unknown skill: discord:configure` と表示され、トークンが引数として表示されてしまう場合があります。
 >
-> ![discord:configure が Unknown skill になるエラー](https://raw.githubusercontent.com/aieo-product/blog/main/images/remote-control-fix/claude_error_masked.png)
+> ![discord:configure が Unknown skill になるエラー](https://raw.githubusercontent.com/aieo-product/blog/main/images/remote-control-fix/claude_error_masked.png?v=2)
 > *`/discord:configure` が認識されず、Bot トークンが「Args from unknown skill」として表示されてしまう例*
 >
 > この問題は、`.zshrc` や `settings.json` で **テレメトリを無効化** していることが原因です。テレメトリ無効化がフィーチャーフラグの評価を破壊し、プラグインのスラッシュコマンドが正しく登録されなくなります。
