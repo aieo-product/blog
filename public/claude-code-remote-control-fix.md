@@ -323,4 +323,4 @@ Claude デスクトップアプリ（claude.ai）の設定にある**ロケー�
 
 ---
 
-> この記事は Claude Code（Claude Opus）と共同で執筆しました。
+> この記事は AIと共同で執筆しました。

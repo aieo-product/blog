@@ -263,4 +263,4 @@ OpenAIが **Symphony** で示したように、**Issueを起点としたエー�
 
 ---
 
-> この記事は Claude Code（Claude Opus）と共同で執筆しました。
+> この記事は AIと共同で執筆しました。
