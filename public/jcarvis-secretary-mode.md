@@ -335,4 +335,4 @@ Claude Codeの `/loop` は、単なる繰り返し実行ではなく、**AI秘�
 
 ---
 
-> この記事は Claude Code（Claude Opus）と共同で執筆しました。
+> この記事は AIと共同で執筆しました。

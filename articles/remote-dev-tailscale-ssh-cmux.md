@@ -357,5 +357,5 @@ TeamViewerからの移行で得られた効果を整理します。
 特にClaude CodeのようなCLIベースのAIツールをリモートで使う場合、SSH + cmux の組み合わせは必須と言っても過言ではありません。TeamViewerの遅延に悩んでいる方は、ぜひ試してみてください。
 
 :::message
-この記事は Claude Code（Claude Opus）と共同で執筆しました。
+この記事は AIと共同で執筆しました。
 :::

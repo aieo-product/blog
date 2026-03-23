@@ -254,5 +254,5 @@ OpenAIが **Symphony** で示したように、**Issueを起点としたエー�
 - [OpenAI's Symphony may shift AI beyond chat - UBS](https://finance.yahoo.com/news/openai-symphony-may-shift-ai-164600732.html)
 
 :::message
-この記事は Claude Code（Claude Opus）と共同で執筆しました。
+この記事は AIと共同で執筆しました。
 :::

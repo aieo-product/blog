@@ -326,5 +326,5 @@ Claude Codeの `/loop` は、単なる繰り返し実行ではなく、**AI秘�
 - [AIエージェント時代の開発手法 ── Issue駆動開発で属人化・セッション断絶・品質問題を一挙に解決する](https://qiita.com/items/be1fc389d203235493e5)
 
 :::message
-この記事は Claude Code（Claude Opus）と共同で執筆しました。
+この記事は AIと共同で執筆しました。
 :::

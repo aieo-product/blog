@@ -308,5 +308,5 @@ Claude Code Channels x Discord は、**スマホから母艦 PC の Claude Code 
 - [Claude Code Settings](https://code.claude.com/docs/en/settings)
 
 :::message
-この記事は Claude Code（Claude Opus）と共同で執筆しました。
+この記事は AIと共同で執筆しました。
 :::
