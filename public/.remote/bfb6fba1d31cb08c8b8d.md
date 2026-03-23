@@ -7,14 +7,16 @@ tags:
   - Anthropic
   - ClaudeCode
 private: false
-updated_at: '2026-03-24T00:25:49+09:00'
+updated_at: '2026-03-24T00:29:00+09:00'
 id: bfb6fba1d31cb08c8b8d
 organization_url_name: null
 slide: false
 ignorePublish: false
 ---
 
-> この記事は AIと共同で執筆しました。
+:::note info
+この記事は AIと共同で執筆しました。
+:::
 
 ## はじめに
 
