@@ -14,7 +14,9 @@ slide: false
 ignorePublish: false
 ---
 
-> この記事は AIと共同で執筆しました。
+:::note info
+この記事は AIと共同で執筆しました。
+:::
 
 ## はじめに
 
