@@ -7,7 +7,7 @@ tags:
   - tailscale
   - ClaudeCode
 private: false
-updated_at: '2026-03-24T00:19:05+09:00'
+updated_at: '2026-03-24T00:25:53+09:00'
 id: b4ee31a6578becf04770
 organization_url_name: null
 slide: false

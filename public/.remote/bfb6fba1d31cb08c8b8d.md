@@ -7,12 +7,14 @@ tags:
   - Anthropic
   - ClaudeCode
 private: false
-updated_at: '2026-03-24T00:19:01+09:00'
+updated_at: '2026-03-24T00:25:49+09:00'
 id: bfb6fba1d31cb08c8b8d
 organization_url_name: null
 slide: false
 ignorePublish: false
 ---
+
+> この記事は AIと共同で執筆しました。
 
 ## はじめに
 
@@ -320,7 +322,3 @@ Claude デスクトップアプリ（claude.ai）の設定にある**ロケー�
 この設計については Anthropic 側の改善を期待したいところです。テレメトリの無効化とフィーチャーフラグの評価は、本来独立して制御できるべきでしょう。
 
 同じ問題で困っている方の助けになれば幸いです。
-
----
-
-> この記事は AIと共同で執筆しました。
