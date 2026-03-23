@@ -7,7 +7,7 @@ tags:
   - Anthropic
   - ClaudeCode
 private: false
-updated_at: '2026-03-22T18:19:27+09:00'
+updated_at: '2026-03-23T09:06:44+09:00'
 id: bfb6fba1d31cb08c8b8d
 organization_url_name: null
 slide: false
@@ -323,4 +323,4 @@ Claude デスクトップアプリ（claude.ai）の設定にある**ロケー�
 
 ---
 
-> この記事は AIと共同で執筆しました。
+> この記事は Claude Code（Claude Opus）と共同で執筆しました。
