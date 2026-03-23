@@ -14,6 +14,8 @@ slide: false
 ignorePublish: false
 ---
 
+> この記事は AIと共同で執筆しました。
+
 ## はじめに
 
 AIエージェントを使ったソフトウェア開発が急速に普及しています。Claude Code、Codex、Cursorなど、AIが直接コードを書いてくれる時代になりました。
@@ -260,7 +262,3 @@ OpenAIが **Symphony** で示したように、**Issueを起点としたエー�
 - [OpenAI Symphony（GitHub）](https://github.com/openai/symphony)
 - [OpenAI Releases Symphony - MarkTechPost](https://www.marktechpost.com/2026/03/05/openai-releases-symphony-an-open-source-agentic-framework-for-orchestrating-autonomous-ai-agents-through-structured-scalable-implementation-runs/)
 - [OpenAI's Symphony may shift AI beyond chat - UBS](https://finance.yahoo.com/news/openai-symphony-may-shift-ai-164600732.html)
-
----
-
-> この記事は AIと共同で執筆しました。
