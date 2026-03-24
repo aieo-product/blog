@@ -10,6 +10,10 @@ published: true
 この記事は AIと共同で執筆しました。
 :::
 
+:::message
+🇺🇸 [English version available](https://zenn.dev/aieo_product/articles/claude-code-remote-control-fix-en)
+:::
+
 ## はじめに
 
 Claude Code の **remote-control** は、ブラウザやモバイルから Claude Code セッションを操作できる機能です。外出先からスマホでセッションを確認したり、別端末から指示を出したりと、非常に便利な機能です。
