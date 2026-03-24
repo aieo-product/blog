@@ -1,14 +1,16 @@
 ---
-title: "Claude Code remote-control Not Working? 3 Error Patterns and Complete Fix Guide"
+title: >-
+  Claude Code remote-control Not Working? 3 Error Patterns and Complete Fix
+  Guide
 tags:
-  - ClaudeCode
-  - troubleshooting
-  - macOS
   - CLI
+  - macOS
+  - Troubleshooting
   - Anthropic
+  - ClaudeCode
 private: false
-updated_at: ''
-id: null
+updated_at: '2026-03-24T10:42:51+09:00'
+id: aff1405fa83c00c14039
 organization_url_name: null
 slide: false
 ignorePublish: false
