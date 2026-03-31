@@ -293,6 +293,14 @@ The app is not yet notarized with Apple Developer Program. Without step 4, macOS
 
 ---
 
+### Disclaimer
+
+This app encrypts and stores your API keys in the macOS Keychain. In Proxy mode, keys never appear in `.env` at all, so security should be quite strong under normal usage.
+
+However, **no software can guarantee 100% security**. In the unlikely event of key leaks or bugs, **use at your own risk**.
+
+I've built this as carefully as I can, but ultimately it's your responsibility to evaluate and decide whether to use it.
+
 :::message
 AI KeyChain is open source. If you're doing AI development on macOS, give it a try. Issues and pull requests are welcome!
 :::
