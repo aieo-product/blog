@@ -1,9 +1,17 @@
 ---
-title: "Vibe Jam 2026 に Three.js 100階ハクスラを出した話 ── 1MB 制約を Procedural BGM と Voxel 合成で乗り切る"
-emoji: "🎮"
-type: "tech"
-topics: ["生成AI", "ClaudeCode", "ThreeJS", "WebAudio", "ゲーム開発"]
-published: true
+title: Vibe Jam 2026 に Three.js 100階ハクスラを出した話 ── 1MB 制約を Procedural BGM と Voxel 合成で乗り切る
+tags:
+  - 生成AI
+  - ClaudeCode
+  - ThreeJS
+  - WebAudio
+  - ゲーム開発
+private: false
+updated_at: ''
+id: null
+organization_url_name: null
+slide: false
+ignorePublish: false
 ---
 
 ## はじめに
@@ -284,5 +292,6 @@ JS の **9 割が Three.js** です。`tree-shaking` 効かせても WebGL コ�
   - PC: WASD 移動 / Space 攻撃 / V ガード+パリィ / Shift 回避 / Q,E,R,T スキル / I 装備画面 / B ストレージ
   - Mobile: 左半画面ドラッグ移動 + メガドライブ風 6 ボタン
 - 🐙 ソース: https://github.com/aieo-product/vibejamGame
+- 📝 Zenn版: https://zenn.dev/syngr/articles/vibejam-2026-procedural
 
 「procedural なんちゃら」は最初の数行を書くまでが一番面倒で、書き始めると `BoxGeometry` も `OscillatorNode` も癖になります。Vibe Jam の 1 MB 制約は個人的にはむしろ**創造性の制約**として楽しめました。次のジャムでも同じスタックでやると思います。
