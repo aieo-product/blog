@@ -1,5 +1,5 @@
 ---
-title: "Stop Exposing API Keys in env — macOS Keychain + Local Proxy for Secure AI Development"
+title: "Stop Exposing API Keys: macOS Keychain + Local Proxy for Secure AI Dev"
 emoji: "🔐"
 type: "tech"
 topics: ["macOS", "security", "AI", "Swift", "APIkeys"]

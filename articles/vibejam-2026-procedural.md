@@ -1,5 +1,5 @@
 ---
-title: "Vibe Jam 2026 に Three.js 100階ハクスラを出した話 ── 1MB 制約を Procedural BGM と Voxel 合成で乗り切る"
+title: "Vibe Jam 2026: Three.js 100階ハクスラを 1MB に収めた（Procedural BGM + Voxel 合成）"
 emoji: "🎮"
 type: "tech"
 topics: ["生成AI", "ClaudeCode", "ThreeJS", "WebAudio", "ゲーム開発"]

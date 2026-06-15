@@ -1,5 +1,5 @@
 ---
-title: "macOS Keychain で 1Password の op:// 相当を実装した話 ── AI 開発の API キー管理を env から解放する"
+title: "macOS Keychain で 1Password の op:// 相当を実装 ── AI 開発の API キー管理を env から解放"
 emoji: "🔑"
 type: "tech"
 topics: ["macOS", "Swift", "セキュリティ", "ClaudeCode", "生成AI"]

@@ -1,5 +1,5 @@
 ---
-title: "Claude Code remote-control Not Working? 3 Error Patterns and Complete Fix Guide"
+title: "Claude Code remote-control Not Working? 3 Errors and the Complete Fix"
 emoji: "🔧"
 type: "tech"
 topics: ["claudecode", "troubleshooting", "macOS", "CLI", "Anthropic"]
