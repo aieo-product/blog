@@ -3,7 +3,7 @@ title: "Vibe Jam 2026: Three.js 100階ハクスラを 1MB に収めた（Procedu
 emoji: "🎮"
 type: "tech"
 topics: ["生成AI", "ClaudeCode", "ThreeJS", "WebAudio", "ゲーム開発"]
-published: true
+published: false
 ---
 
 ## はじめに
