@@ -3,7 +3,7 @@ title: "Builders Weekend Special Edition — Shipaton 26で審査員賞！VibeSw
 emoji: "🏆"
 type: "tech"
 topics: ["ハッカソン", "ClaudeCode", "Codex", "ThreeJS", "生成AI"]
-published: false
+published: true
 ---
 
 :::message
