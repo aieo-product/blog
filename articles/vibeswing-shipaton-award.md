@@ -6,6 +6,10 @@ topics: ["ハッカソン", "ClaudeCode", "Codex", "ThreeJS", "生成AI"]
 published: false
 ---
 
+:::message
+この記事は AIと共同で執筆しました。
+:::
+
 ## はじめに
 
 8/8 に渋谷PARCOで行われた **Builders Weekend Special Edition — Shipaton 26** ハッカソンで、**審査員賞（Judges' Award）** を受賞しました！
@@ -57,7 +61,6 @@ published: false
 最終形はこんな構成です。登場するのは iPhone（SwiftUI + Core Motion）・Mac（Node.js の WebSocket リレー）・ブラウザ（Three.js のゲーム画面）の3つだけで、iPhone のテザリングに Mac をつなぐだけの完全オフライン構成にしました。
 
 ![vibeSwing の構成図](/images/vibeswing-shipaton/architecture.png)
-*構成図（[vibeSwing 設計書サイト](https://vibeswing-docs.pages.dev/)より）*
 
 - 2人協力で巨大ボスの HP を削るタイミングゲーム（PERFECT ±80ms / GOOD ±300ms / MISS）
 - スイング強度が閾値を超えた PERFECT は **SMAASH!!** 演出で追加ダメージ
