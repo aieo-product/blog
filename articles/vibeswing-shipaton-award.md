@@ -1,5 +1,5 @@
 ---
-title: "渋谷PARCOのハッカソンで審査員賞！iPhoneを振り回す「VibeSwing」を3時間のVibe Codingで作った話"
+title: "Builders Weekend Special Edition — Shipaton 26で審査員賞！VibeSwingを3時間で作った話"
 emoji: "🏆"
 type: "tech"
 topics: ["ハッカソン", "ClaudeCode", "Codex", "ThreeJS", "生成AI"]
@@ -26,8 +26,8 @@ published: false
 
 ![会場入口のサイネージ](/images/vibeswing-shipaton/event-signage.jpg)
 
-- **イベント**: Builders Weekend Special Edition — Shipaton 26（RevenueCat の世界規模モバイルハッカソン「Shipaton」の東京スペシャル版）
-- **会場**: 渋谷PARCO 上層階にある Digital Garage のイベントスペース（Open Network Lab 協力）。眺望が最高
+- **イベント**: [Builders Weekend - Shipaton Special Edition with OnLab](https://luma.com/c32o6i8l)。「**1日でモバイルアプリをつくって、世界に出す**」がコンセプトの1日完結ミニハッカソンで、RevenueCat の世界最大級モバイルハッカソン「Shipaton 2026」（賞金総額 $1M・Times Square ビルボード掲載）への入口イベントでもあります
+- **会場**: 渋谷PARCO DGビル 18F の Digital Garage イベントスペース「Dragon Gate」（Open Network Lab 協力）。眺望が最高
 - **ホスト**: Builders Weekend / Takeoff Tokyo の CEO・Antti さん。進行と通訳は RevenueCat の上田さん
 - **フォーマット**: 「**30秒でピッチして、3時間で作って、60秒でデモする**」。チームは最大2人
 
@@ -54,17 +54,10 @@ published: false
 
 ## 作ったもの: VibeSwing
 
-最終形はこんな構成です。
+最終形はこんな構成です。登場するのは iPhone（SwiftUI + Core Motion）・Mac（Node.js の WebSocket リレー）・ブラウザ（Three.js のゲーム画面）の3つだけで、iPhone のテザリングに Mac をつなぐだけの完全オフライン構成にしました。
 
-```
-[iPhone ×2] SwiftUI + Core Motion（スイングの強さ・縦振り/横振りを検出）
-     │ WebSocket
-     ▼
-[Mac] Node.js リレーサーバー
-     │ WebSocket
-     ▼
-[ブラウザ] Three.js (WebGL) のゲーム画面 → ディスプレイ / プロジェクターに投影
-```
+![vibeSwing の構成図](/images/vibeswing-shipaton/architecture.png)
+*構成図（[vibeSwing 設計書サイト](https://vibeswing-docs.pages.dev/)より）*
 
 - 2人協力で巨大ボスの HP を削るタイミングゲーム（PERFECT ±80ms / GOOD ±300ms / MISS）
 - スイング強度が閾値を超えた PERFECT は **SMAASH!!** 演出で追加ダメージ
@@ -80,7 +73,7 @@ published: false
 
 ### 1. 役割分担と issue 駆動開発
 
-役割分担は、私がメインプログラム + グラフィック作成、Yu 君がスマホアプリ（加速度対応）と Suno での音作り。
+役割分担は、私がメインプログラム + グラフィック作成、Yu 君がスマホアプリ（加速度対応）と音まわり。音は BGM が Suno で、SE はなんと [Yu 君の自作](https://x.com/YuYoshimuta/status/2086262383048319095)です。
 
 普段から [issue 駆動開発](https://zenn.dev/aieo_product/articles/issue-driven-ai-development)で進めているので、GitHub リポジトリを Yu 君とシェアして **すべての作業を issue → PR** で回しました。これがうまくハマって、2人 + 複数 AI エージェントが同じリポジトリを触っているのに**作業がほぼ競合せずに完走**。issue / PR の通し番号はビルドタイム終盤の15:45時点で #64、当日中に #80 まで到達し、マージした PR は40本近くになりました。
 
@@ -96,7 +89,7 @@ published: false
 └─ Claude Code セッション②「デザイン」
      … アートディレクション + アセット生成 (Higgsfield MCP / gpt-image)
 Yu 君側
-└─ iPhone アプリ (Core Motion) + Suno で BGM / SE
+└─ iPhone アプリ (Core Motion) + 音まわり (BGM: Suno / SE: 自作)
 ```
 
 司令塔セッションは自分ではほぼコードを書かず、**レビューとマージに集中**。実装は Codex に投げ、視覚確認は「agent-browser でスクショ → Sonnet に画像解析させて合否判定」という検証ループで回しました。
@@ -117,11 +110,24 @@ Yu 君側
 
 最初は2人で対戦するテニスゲームを作ろうとしていましたが、マリオパーティーやリズム天国のようなキャッチーさが欲しくなり、**みんなで巨大ボスを共闘して倒す方式**に方向転換（最大4人案から始めて、パフォーマンス重視で最終的に2人固定にしました）。
 
-ゴールのすり合わせは、画像生成でゲームのイメージ画像を**コンペ形式**で複数案作って選ぶ方法を取りました。「ニンテンドー風3案 → ボスバトル構図3案 → 3D想定3案」とラウンドを重ねて、最終的にネオン系の案に決定。口頭で世界観を議論するより、**絵で選ぶ方が圧倒的に速い**です。
+ゴールのすり合わせは、画像生成でゲームのイメージ画像を**コンペ形式**で複数案作って選ぶ方法を取りました。「ニンテンドー風3案 → ボスバトル構図3案 → 3D想定3案」とラウンドを重ねて絞り込んでいきます。実際に issue に貼られていたコンセプトアートがこちら。
+
+![最初期のテニス案](/images/vibeswing-shipaton/concept-tennis.jpg)
+*ラウンド1: 最初期のクリーンなテニス案*
+
+![ボスバトル案（もちもちマスコット）](/images/vibeswing-shipaton/concept-mochi-boss.jpg)
+*ラウンド2: ボスバトルにピボットした「もちもちマスコット」案。プリンがボス*
+
+口頭で世界観を議論するより、**絵で選ぶ方が圧倒的に速い**です。
 
 ### 4. 2D の可愛い路線から Three.js へ途中変更
 
-当初は 2D グラフィックメインの可愛らしい世界観を想定していましたが、「ドーパミンがドパドパ出る演出全部盛り」にしたくなり、途中で **Three.js (WebGL)** に方針変更。パーティクルや発光エフェクトを大量に重ねても GPU 描画なら 60fps を維持しやすい、という実装都合ともマッチしました。ネオン + Bloom は多少雑なモデルでも「映える」のでハッカソン向きです。
+当初は 2D グラフィックメインの可愛らしい世界観を想定していましたが、「ドーパミンがドパドパ出る演出全部盛り」にしたくなり、途中で **Three.js (WebGL)** に方針変更。パーティクルや発光エフェクトを大量に重ねても GPU 描画なら 60fps を維持しやすい、という実装都合ともマッチしました。
+
+![採用されたネオン3D案](/images/vibeswing-shipaton/concept-dopamine-3d.jpg)
+*ラウンド3で採用された「ドーパミン全開」のネオン3D案。完成版とほぼ同じ画角*
+
+ネオン + Bloom は多少雑なモデルでも「映える」のでハッカソン向きです。
 
 ### 5. アセットは画像生成 AI、確認は専用シミュレーター
 
@@ -138,6 +144,8 @@ Yu 君のスマホアプリも順調に仕上がってきたので PoC と接続
 ![締切から逆算したアラーム](/images/vibeswing-shipaton/alarm-timer.jpg)
 *「基盤完成」「そろそろ纏める時間」「リリース準備」── 締切から逆算してアラームを仕込んでおいた*
 
+この「締切から逆算してアラームを仕込む」やり方は [@GOROman](https://x.com/GOROman) さんから教わったものです。ハッカソンとの相性が抜群でした。
+
 - 追加要素は最小限に絞り、**常に「いつでもリリースできる状態」を維持**しながら積み増す
 - 終盤はテストのエビデンス取得を省略して「テスト → 目視1枚 → 即マージ」の最短フローに切り替え
 - 発表直前の17:51にも、デモ用の「30秒制限 + スコア2倍」モード（`?demo=true`）の PR をマージ
@@ -147,11 +155,11 @@ Yu 君のスマホアプリも順調に仕上がってきたので PoC と接続
 ![当日の X ポスト（ビフォーアフター）](/images/vibeswing-shipaton/x-post-build.png)
 *[当日の投稿](https://x.com/otani_ai_memo)より。下が1時間時点の PoC、上が完成版*
 
-## ピッチ本番 ── 音が出ないw
+## ピッチ本番 ── 音が出ない
 
 デモ発表の待ち時間も、他チームのピッチを聴きながら手元でスマッシュ判定の閾値をライブ調整（0.96 → 0.92）。「横振りマジむずい」と言いながら直前まで粘ります。
 
-そして本番。せっかくなのでホストの Antti さんと上田さんに実際にプレイしてもらう実演スタイルにしました。
+そして本番。せっかくなのでホストの Antti さんに実際にプレイしてもらう実演スタイルにしました。
 
 ![ピッチでの実演の様子](/images/vibeswing-shipaton/pitch-demo.jpg)
 *会場スクリーンに投影しながら iPhone を振ってもらう実演デモ*
@@ -160,12 +168,12 @@ Yu 君のスマホアプリも順調に仕上がってきたので PoC と接続
 
 それでもプレイ自体は大いに盛り上がり、ピッチとしては成功。**ピッチでは何が起こるかわからないトラブルが付きもの**。これも学びの一つです。
 
-## 結果発表 ── 何が起こったかわからないw
+## 結果発表
 
 ピッチ後はやり切った達成感と「クオリティは申し分ない」という確信があったので、あとは祈るだけ。Yu 君とひと足先に乾杯していました。
 
-![賞のスライド](/images/vibeswing-shipaton/awards-slide.jpg)
-*Judges' Award の副賞は Codex Micro。「3万円と Codex Micro 欲しい!!」とポストしていた*
+![「3万円とcodexMicro欲しい!!」のポスト](/images/vibeswing-shipaton/x-post-want.png)
+*[当日の投稿](https://x.com/otani_ai_memo)より。Judges' Award の副賞は Codex Micro*
 
 いよいよ発表の瞬間──だったのですが、直前まで雑談していたため、**Yu 君に言われるまで何が起こったのか分かりませんでしたw** 何の賞を取れたのかも分からないまま壇上に上がり、ピッチでプレイしてくれた Antti さんから Codex Micro を受け取って、**そこで初めて審査員賞だと気づく**というオチ。
 
@@ -184,7 +192,5 @@ Yu 君のスマホアプリも順調に仕上がってきたので PoC と接続
 という学びを持ち帰りつつ、無事に審査員賞も取れて最高の1日でした。
 
 イベントの終わり際には、明治神宮方面で上がっていた花火が渋谷PARCO の18階から見えて、気持ちよく帰宅。
-
-![18階から見えた花火](/images/vibeswing-shipaton/fireworks.jpg)
 
 一緒に戦ってくれた Yu 君、運営の Antti さん・上田さんはじめ Builders Weekend / Shipaton の皆さん、ありがとうございました！Shipaton 本戦もこの勢いで Ship していきます 🚀
